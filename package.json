@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Mobile application for sharing your geolocation with friends.",
   "scripts": {
-    "format": "prettier --write apps/**/*.ts"
+    "format": "prettier --write apps/**/*.{ts,tsx}"
   },
   "keywords": [],
   "author": "Alexander Smirnov",
