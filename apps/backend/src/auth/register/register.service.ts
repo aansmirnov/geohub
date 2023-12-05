@@ -5,7 +5,7 @@ import { sign } from 'jsonwebtoken';
 
 const prisma = new PrismaClient();
 
-export const registerSerive = async (
+export const registerService = async (
     body: RegisterUserIn,
 ): Promise<Result<RegisterUserOut>> => {
     const { username, email, password } = body;
