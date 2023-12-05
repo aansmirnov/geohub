@@ -1,12 +1,12 @@
-import { RegisterUserIn, AuthUserOut, Result } from 'src/types';
+import { LoginUserIn, AuthUserOut, Result } from 'src/types';
 import { PrismaClient } from '@prisma/client';
-import { hash } from 'bcrypt';
+import { compare } from 'bcrypt';
 import { sign } from 'jsonwebtoken';
 
 const prisma = new PrismaClient();
 
-export const registerService = async (
-    body: RegisterUserIn,
+export const loginService = async (
+    body: LoginUserIn,
 ): Promise<Result<AuthUserOut>> => {
     const { username, email, password } = body;
 
@@ -23,32 +23,35 @@ export const registerService = async (
         },
     });
 
-    if (user) {
-        const errorMessage = 'User already exists with this';
-        const path = user.email === email ? 'email' : 'username';
-
+    if (!user) {
         return {
             error: {
-                code: 409,
-                message: `${errorMessage} ${path}`,
-                path,
+                code: 400,
+                message: 'User not found',
+                path: 'username',
             },
         };
     }
 
-    const hashedPassword = await hash(password, 10);
+    const isPasswordEqual = await compare(password, user.password);
 
-    const { id } = await prisma.user.create({
-        data: { username, email, password: hashedPassword },
-    });
+    if (!isPasswordEqual) {
+        return {
+            error: {
+                code: 401,
+                message: 'Incorrect password',
+                path: 'password',
+            },
+        };
+    }
 
     const token = sign(`${username}${email}`, process.env.JWT_SECRET || '');
 
     return {
         data: {
-            id,
-            username,
-            email,
+            email: user.email,
+            username: user.username,
+            id: user.id,
             token,
         },
     };

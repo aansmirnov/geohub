@@ -1,2 +1,3 @@
 export * from './register-user-in';
-export * from './register-user-out';
+export * from './auth-user-out';
+export * from './login-user-in';
