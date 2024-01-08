@@ -1,5 +1,6 @@
 import { Result, ResetPasswordIn } from 'src/types';
 import { PrismaClient } from '@prisma/client';
+import { transporter } from '../../utils/transporter';
 
 const prisma = new PrismaClient();
 
@@ -31,6 +32,24 @@ export const resetPasswordService = async (
         },
         data: { authCode },
     });
+
+    const info = await transporter.sendMail({
+        from: 'geohub@gmail.com',
+        to: email,
+        subject: 'Reset Password Code',
+        text: String(authCode),
+        html: `<b>${authCode}</b>`,
+    });
+
+    if (!info.messageId) {
+        return {
+            error: {
+                code: 500,
+                message: 'Something went wrong',
+                path: 'reset_code',
+            },
+        };
+    }
 
     return { data: true };
 };
