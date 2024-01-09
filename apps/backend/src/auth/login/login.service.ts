@@ -45,7 +45,7 @@ export const loginService = async (
         };
     }
 
-    const token = sign(`${username} ${email}`, process.env.JWT_SECRET || '');
+    const token = sign(`${user.username} ${user.email}`, process.env.JWT_SECRET || '');
 
     return {
         data: {
