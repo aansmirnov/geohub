@@ -1,12 +1,12 @@
 import { PrismaClient } from '@prisma/client';
 import { sign } from 'jsonwebtoken';
-import { CheckAuthCodeIn, Result } from 'src/types';
+import { CheckAuthCodeIn, Result, Meta } from 'src/types';
 
 const prisma = new PrismaClient();
 
 export const checkAuthCodeService = async (
     body: CheckAuthCodeIn,
-): Promise<Result<{ token: string }>> => {
+): Promise<Result<Meta>> => {
     const { email, authCode } = body;
 
     const user = await prisma.user.findFirst({ where: { email } });
