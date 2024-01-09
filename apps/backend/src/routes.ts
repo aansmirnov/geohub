@@ -4,8 +4,8 @@ import {
     loginController,
     resetPasswordController,
     checkAuthCodeController,
-} from './auth';
-import { updateUserPasswordController } from './user';
+    updateUserPasswordController,
+} from './api';
 import bodyParser from 'body-parser';
 
 export const router = Router();
