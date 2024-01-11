@@ -9,7 +9,7 @@ export const resetPasswordController = async (
     const { error, data } = await resetPasswordService(request.body);
 
     if (error) {
-        return response.json(error);
+        return response.status(error.code).json(error);
     }
 
     return response.json(data);

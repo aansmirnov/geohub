@@ -9,7 +9,7 @@ export const checkAuthCodeController = async (
     const { error, data } = await checkAuthCodeService(request.body);
 
     if (error) {
-        return response.json(error);
+        return response.status(error.code).json(error);
     }
 
     return response.json(data);
