@@ -5,6 +5,7 @@ import {
     resetPasswordController,
     checkAuthCodeController,
     updateUserPasswordController,
+    meController,
 } from './api';
 import bodyParser from 'body-parser';
 
@@ -16,4 +17,5 @@ router.post('/mobile/v1/auth/login', parser, loginController);
 router.post('/mobile/v1/auth/reset-password', parser, resetPasswordController);
 router.post('/mobile/v1/auth/check-auth-code', parser, checkAuthCodeController);
 
+router.get('/mobile/v1/user/me', meController);
 router.patch('/mobile/v1/user/password', parser, updateUserPasswordController);
