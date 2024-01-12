@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { sign } from 'jsonwebtoken';
-import { CheckAuthCodeIn, Result, Meta } from 'src/types';
+import { CheckAuthCodeIn, Result, Meta } from 'packages';
 
 const prisma = new PrismaClient();
 

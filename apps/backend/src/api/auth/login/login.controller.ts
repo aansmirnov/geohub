@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { loginService } from './login.service';
-import { LoginUserIn } from 'src/types';
+import { LoginUserIn } from 'packages';
 
 export const loginController = async (
     request: Request<{}, {}, LoginUserIn>,

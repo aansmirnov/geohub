@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { CheckAuthCodeIn } from 'src/types';
+import { CheckAuthCodeIn } from 'packages';
 import { checkAuthCodeService } from './check-auth-code.service';
 
 export const checkAuthCodeController = async (

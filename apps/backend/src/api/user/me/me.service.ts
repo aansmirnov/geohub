@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { AuthUserOut, Result } from 'src/types';
+import { AuthUserOut, Result } from 'packages';
 import { verifyToken } from '../../../utils/verify-token';
 
 const prisma = new PrismaClient();

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Meta } from 'src/types';
+import { Meta } from 'packages';
 import { getTokenFromHeaders } from '../../../utils/get-token-from-headers';
 import { meService } from './me.service';
 

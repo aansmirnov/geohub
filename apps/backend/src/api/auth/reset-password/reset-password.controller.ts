@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { ResetPasswordIn } from 'src/types';
+import { ResetPasswordIn } from 'packages';
 import { resetPasswordService } from './reset-password.service';
 
 export const resetPasswordController = async (

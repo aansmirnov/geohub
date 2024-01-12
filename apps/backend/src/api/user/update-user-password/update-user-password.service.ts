@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { hash } from 'bcrypt';
-import { AuthUserOut, Result, UpdateUserPasswordIn } from 'src/types';
+import { AuthUserOut, Result, UpdateUserPasswordIn } from 'packages';
 import { verifyToken } from '../../../utils/verify-token';
 
 const prisma = new PrismaClient();

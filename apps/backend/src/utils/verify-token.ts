@@ -1,5 +1,5 @@
 import { verify } from 'jsonwebtoken';
-import { Result } from 'src/types';
+import { Result } from 'packages';
 
 type VerifyTokenReturnType = {
     username: string;

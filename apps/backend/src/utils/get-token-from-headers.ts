@@ -1,4 +1,4 @@
-import { Result } from 'src/types';
+import { Result } from 'packages';
 import { IncomingHttpHeaders } from 'http';
 
 const tokenError = {

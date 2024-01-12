@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { registerService } from './register.service';
-import { RegisterUserIn } from 'src/types';
+import { RegisterUserIn } from 'packages';
 
 export const registerController = async (
     request: Request<{}, {}, RegisterUserIn>,

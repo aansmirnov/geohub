@@ -1,4 +1,4 @@
-import { RegisterUserIn, AuthUserOut, Result } from 'src/types';
+import { RegisterUserIn, AuthUserOut, Result } from 'packages';
 import { PrismaClient } from '@prisma/client';
 import { hash } from 'bcrypt';
 import { sign } from 'jsonwebtoken';

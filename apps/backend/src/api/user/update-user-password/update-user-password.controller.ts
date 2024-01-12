@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { UpdateUserPasswordIn } from 'src/types';
+import { UpdateUserPasswordIn } from 'packages';
 import { updateUserPasswordService } from './update-user-password.service';
 
 export const updateUserPasswordController = async (

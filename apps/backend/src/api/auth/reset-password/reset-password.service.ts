@@ -1,4 +1,4 @@
-import { Result, ResetPasswordIn } from 'src/types';
+import { Result, ResetPasswordIn } from 'packages';
 import { PrismaClient } from '@prisma/client';
 import { transporter } from '../../../utils/transporter';
 
