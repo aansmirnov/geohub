@@ -1,7 +1,7 @@
-import { Result } from 'packages';
+import { Error, Result } from 'packages';
 import { IncomingHttpHeaders } from 'http';
 
-const tokenError = {
+const tokenError: { error: Error } = {
     error: {
         message: 'No authorization token was found',
         code: 403,
@@ -9,7 +9,9 @@ const tokenError = {
     },
 };
 
-export const getTokenFromHeaders = (headers: IncomingHttpHeaders): Result<string> => {
+export const getTokenFromHeaders = (
+    headers: IncomingHttpHeaders,
+): Result<string> => {
     const token = headers['geohub-token'] as string | undefined;
 
     if (!token) {
