@@ -12,5 +12,5 @@ model User {
   email     String  @unique
   username  String  @unique
   password  String 
-  authCode  Int?    @unique
+  authCode  Int?
 }
