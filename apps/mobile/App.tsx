@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { Text } from 'src/components';
 import { useLoadFonts } from 'src/hooks';
 
 export default function App() {
@@ -12,11 +13,13 @@ export default function App() {
 
     return (
         <View style={styles.container}>
-            <Text style={{ fontFamily: 'Inter-Bold', fontSize: 30 }}>Bold</Text>
-            <Text style={{ fontFamily: 'Inter-Medium', fontSize: 25 }}>
+            <Text fontFamily='Inter-Bold' fontSize={30} color='red'>
+                Bold
+            </Text>
+            <Text fontFamily='Inter-Medium' fontSize={25} color='peach'>
                 Medium
             </Text>
-            <Text style={{ fontFamily: 'Inter-Regular', fontSize: 20 }}>
+            <Text fontFamily='Inter-Regular' color='orange'>
                 Regular
             </Text>
             <StatusBar style='auto' />
