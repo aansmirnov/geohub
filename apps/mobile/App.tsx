@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
-import { Text } from 'src/components';
+import { Alert, StyleSheet, View } from 'react-native';
+import { Button, Text } from 'src/components';
+import { COLORS_MAP, PEACH } from 'src/components/ui/colors';
 import { useLoadFonts } from 'src/hooks';
 
 export default function App() {
@@ -13,15 +14,11 @@ export default function App() {
 
     return (
         <View style={styles.container}>
-            <Text fontFamily='Inter-Bold' fontSize={30} color='red'>
-                Bold
-            </Text>
-            <Text fontFamily='Inter-Medium' fontSize={25} color='peach'>
-                Medium
-            </Text>
-            <Text fontFamily='Inter-Regular' color='orange'>
-                Regular
-            </Text>
+            <Button onPress={() => Alert.alert('Hello!')} borderRadius={22}>
+                <Text color='white' fontSize={26} fontFamily='Inter-Medium'>
+                    Log In
+                </Text>
+            </Button>
             <StatusBar style='auto' />
         </View>
     );
@@ -30,7 +27,7 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: COLORS_MAP[PEACH],
         alignItems: 'center',
         justifyContent: 'center',
     },

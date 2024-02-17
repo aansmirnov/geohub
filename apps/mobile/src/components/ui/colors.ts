@@ -6,7 +6,7 @@ const DARK_GREY = 'darkGrey';
 const LIGHT_GREY = 'lightGrey';
 const GREY = 'grey';
 const RED = 'red';
-const PEACH = 'peach';
+export const PEACH = 'peach';
 
 export const COLORS_MAP = {
     [BLACK]: '#000',
