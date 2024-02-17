@@ -1,11 +1,11 @@
 import { Pressable, StyleSheet } from 'react-native';
 import { ButtonProps } from './types';
-import { COLORS_MAP } from '../colors';
+import { COLORS_MAP, GREEN } from '../colors';
 
 export const Button = ({
     children,
-    bg = 'green',
-    borderRadius = 0,
+    bg = GREEN,
+    borderRadius,
     // size = 'l',
     ...props
 }: ButtonProps) => {

@@ -1,12 +1,13 @@
-const BLACK = 'black';
+export const BLACK = 'black';
+export const GREEN = 'green';
+export const PEACH = 'peach';
+
 const WHITE = 'white';
-const GREEN = 'green';
 const ORANGE = 'orange';
 const DARK_GREY = 'darkGrey';
 const LIGHT_GREY = 'lightGrey';
 const GREY = 'grey';
 const RED = 'red';
-export const PEACH = 'peach';
 
 export const COLORS_MAP = {
     [BLACK]: '#000',
