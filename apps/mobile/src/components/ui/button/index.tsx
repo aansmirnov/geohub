@@ -21,7 +21,7 @@ export const Button = ({
     };
 
     return (
-        <View style={styles.buttonWrapper}>
+        <View style={{ ...styles.buttonWrapper, ...buttonSize }}>
             <Pressable
                 style={{
                     backgroundColor,
