@@ -7,7 +7,8 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "format": "prettier --write src/**/*.{ts,tsx}"
   },
   "author": "Alexander Smirnov",
   "license": "MIT",
@@ -28,6 +29,7 @@
     "eslint-config-universe": "^12.0.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.2.5",
     "typescript": "^5.1.3"
   }
 }
