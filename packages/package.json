@@ -1,9 +1,0 @@
-{
-    "name": "packages",
-    "version": "1.0.0",
-    "description": "Types for Geohub",
-    "author": "Alexander Smirnov",
-    "license": "MIT",
-    "main": "index.ts"
-  }
-  
