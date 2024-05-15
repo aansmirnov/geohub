@@ -1,7 +1,0 @@
-node_modules
-apps/**/node_modules
-
-apps/mobile/build
-apps/mobile/.expo
-
-apps/backend/dist
